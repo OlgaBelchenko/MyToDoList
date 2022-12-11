@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tv_number"
@@ -46,18 +45,18 @@
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/standard_margin"
         android:layout_marginEnd="@dimen/standard_margin"
+        android:src="@drawable/ic_edit"
         app:layout_constraintBottom_toBottomOf="@id/tv_todo"
         app:layout_constraintEnd_toStartOf="@id/iv_delete"
-        app:layout_constraintTop_toTopOf="@id/tv_todo"
-        android:src="@drawable/ic_edit"/>
+        app:layout_constraintTop_toTopOf="@id/tv_todo" />
 
     <ImageView
         android:id="@+id/iv_delete"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginStart="@dimen/standard_margin"
         android:layout_marginEnd="@dimen/standard_margin"
         android:src="@drawable/ic_delete"
-        android:layout_marginStart="@dimen/standard_margin"
         app:layout_constraintBottom_toBottomOf="@id/iv_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/iv_edit" />

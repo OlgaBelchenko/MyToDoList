@@ -6,12 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.olgabelchenko.mytodolist.databinding.FragmentNotesBinding
 
 class NotesFragment : Fragment() {
 
-    private lateinit var viewModel: NotesViewModel
+    private val viewModel: NotesViewModel by activityViewModels {
+        NotesViewModelFactory(
+            (activity?.application as NoteApplication).database.notesDao()
+        )
+    }
     private lateinit var binding: FragmentNotesBinding
 
     override fun onCreateView(
@@ -27,12 +32,6 @@ class NotesFragment : Fragment() {
         binding.btnFloating.setOnClickListener {
             findNavController().navigate(R.id.action_notesFragment_to_addNoteFragment)
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(NotesViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

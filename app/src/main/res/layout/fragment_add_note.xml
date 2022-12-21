@@ -30,28 +30,56 @@
         app:layout_constraintStart_toStartOf="@id/tv_enter_text"
         app:layout_constraintTop_toBottomOf="@id/tv_enter_text" />
 
-
-    <Button
-        android:id="@+id/btn_cancel"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/tv_cross_out"
+        style="@style/HeaderTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cancel"
-        style="@style/CancelButton"
-        android:layout_margin="@dimen/standard_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_save"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="@dimen/big_margin"
+        android:text="@string/cross_out"
+        app:layout_constraintStart_toStartOf="@id/et_text"
+        app:layout_constraintTop_toBottomOf="@id/et_text" />
+
+    <CheckBox
+        android:id="@+id/cb_crossed_out_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/et_text"
+        app:layout_constraintTop_toTopOf="@id/tv_cross_out" />
 
     <Button
         android:id="@+id/btn_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/standard_margin"
         android:text="@string/save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_cancel"
-        app:layout_constraintTop_toTopOf="@id/btn_cancel" />
+        android:layout_marginTop="@dimen/huge_margin"
+        app:layout_constraintEnd_toEndOf="@+id/cb_crossed_out_add"
+        app:layout_constraintStart_toStartOf="@+id/tv_cross_out"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cross_out" />
 
+    <Button
+        android:id="@+id/btn_delete"
+        style="@style/DeleteButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big_margin"
+        android:text="@string/delete"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/btn_save"
+        app:layout_constraintStart_toStartOf="@+id/btn_save"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big_margin"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toEndOf="@+id/btn_delete"
+        app:layout_constraintStart_toStartOf="@+id/btn_delete"
+        app:layout_constraintTop_toBottomOf="@id/btn_delete" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

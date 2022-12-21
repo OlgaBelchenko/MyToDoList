@@ -11,4 +11,6 @@
     <color name="brown">#FF804030</color>
     <color name="dark_creme">#FFAAA888</color>
     <color name="dark_brown">#FF4E3524</color>
+    <color name="red">#FFCC0000</color>
+    <color name="dark_red">#FF550000</color>
 </resources>

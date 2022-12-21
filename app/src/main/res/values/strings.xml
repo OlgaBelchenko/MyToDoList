@@ -4,4 +4,6 @@
     <string name="enter_your_todo">Enter your todo</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="cross_out">Cross out?</string>
+    <string name="delete">Delete</string>
 </resources>

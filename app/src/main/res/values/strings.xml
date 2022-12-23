@@ -6,4 +6,7 @@
     <string name="cancel">Cancel</string>
     <string name="cross_out">Cross out?</string>
     <string name="delete">Delete</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_your_note">Edit your note:</string>
 </resources>

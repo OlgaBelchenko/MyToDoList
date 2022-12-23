@@ -7,6 +7,8 @@ import ru.olgabelchenko.mytodolist.data.NoteDao
 
 class NotesViewModel(private val noteDao: NoteDao) : ViewModel() {
 
+    val allNotes: LiveData<List<Note>> = noteDao.getAllNotes().asLiveData()
+
 
     /**
      * Returns true if the EditText is not empty.
@@ -29,6 +31,9 @@ class NotesViewModel(private val noteDao: NoteDao) : ViewModel() {
         }
     }
 
+    /**
+     * Edits the existing Note in database.
+     */
     fun editNote(id: Int, noteText: String, isChecked: Boolean) {
         val note = Note(id, noteText, isChecked)
         updateNote(note)
